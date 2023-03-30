@@ -1,0 +1,616 @@
+---
+title: "template"
+subtitle: "template"
+author: 
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    seal: false
+    #lib_dir: libs
+    css: [ "xaringan_custom/xaringan-themer.css", "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: False
+      ratio: '13:9' # alternatives '16:9' or '4:3' or others e.g. 13:9
+---
+
+class: center, middle
+
+.linea-superior[]
+.linea-inferior[]
+
+<img src="imagenes/logo.png" width="180" />
+
+## Título
+
+## Subtítulo 
+
+## Unidad de Estudios Laborales, Subsecretaría del Trabajo
+
+### Mes de Año
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = TRUE)
+knitr::opts_chunk$set(message = FALSE, warning = F) 
+options(scipen = "999")
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+```
+
+
+
+---
+
+class: inverse, center, middle
+
+.pull-left[
+# Estándar de calidad en encuestas de hogares ONE Chile
+]
+
+
+.pull-right[
+# Quality criteria for household surveys ONE Chile
+]
+
+
+---
+
+class: inverse, center, middle
+
+.pull-left[
+# Antes de empezar...
+]
+
+.pull-right[
+# Before starting...
+]
+
+
+
+---
+background-image: url("imagenes/fondo2.png")
+background-size: 12%
+background-position: 100% 0%
+
+# ¿Qué significa calidad estadística?
+
+## What is the meaning of statistical quality?
+
+.pull-left[
+
+Miguelito: According to the survey, the average salary of women in Arica is 600,000 pesos.
+
+Mafalda: Yes, but did you know that the interval is between 300,000 and 900,000?.
+
+
+]
+
+
+--
+
+.pull-right[
+
+The only thing I know is that I don't know anything
+
+]
+
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+
+# Estándar INE Chile (INE Chile standard)
+
+.pull-left[
+En 2020 el INE publica un estándar de calidad para las estimaciones con **encuestas de hogares**
+]
+
+.pull-right[
+In 2020 INE Chile published its statistical quality standard for **household surveys** estimations
+]
+
+--
+
+
+
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Estándar INE Chile (INE Chile standard)
+
+.pull-left[
+**Cuadro estadístico**: arreglo ordenado de datos procesados para facilitar la lectura e interpretación
+]
+
+.pull-right[
+**Statistical table**: ordered arrangement of data to facilitate reading and interpretation"
+]
+
+
+<br>
+
+.center[
+]
+
+
+---
+
+background-size: contain;
+background-position: 100% 0%
+
+#  Estándar INE Chile (INE Chile standard)
+
+.pull-left[
+- **Tamaño muestral (tm)**: unidades de análisis que nutren las estimaciones (viviendas, hogares y/o personas)
+
+* **Grados de libertad (gl)** 
+  + .small[Tratamiento diferenciado para las **proporciones y razones definidas entre 0 y 1**]
+
+
+* **Coeficiente de variación / error estándar**
+
+  + Proporción y razones definidas entre 0 y 1: **SE**
+  
+  + Resto: **CV**
+
+]
+
+.pull-right[
+- **Sample size**: units of analysis that contribute to estimations (dwellings, households or people)
+
+* **Degrees of freedom** 
+  + .small[Different procedure for **Proportions and ratios between 0 and 1**]
+
+
+* **Coefficient of variation / standard error**
+
+  + Proportions and ratios between 0 and 1: **SE**
+  
+  + All others: **CV**
+
+]
+
+
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Dicotomía de las proporciones 
+
+## Dicothomy of proportions
+
+
+
+
+It makes no sense to conclude that the quality of estimate of p is not acceptable but that estimate of 1-p is acceptable.
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Estándar INE Chile (INE Chile standard)
+
+.pull-left[
+**Indicadores de calidad**
+
+- Proporciones y razones definidas entre 0 y 1: **Error estándar**
+
+- Otras: Coeficiente de variación
+
+]
+
+.pull-right[
+
+**Quality criteria**
+
+- Proportions and ratios between 0 and 1: **Standard error**
+
+- All others: Coefficient of variation
+
+]
+
+
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Estándar INE Chile (INE Chile standard)
+
+.pull-left[
+### Primera etapa de aplicación de estándar
+
+Flujograma para evaluación de calidad de las estimaciones
+
+]
+
+.pull-right[
+### First step in quality assessment
+
+Flowchart for quality assessment
+]
+
+
+.center[
+]
+
+
+**Categories: Reliable, weakly reliable and non-reliable**
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Introducción paquete calidad (introduction)
+
+.pull-left[
+### ¿Cómo llevar a la práctica los conceptos de calidad?
+]
+
+.pull-right[
+
+### ¿How to put the quality concepts into practice?
+
+]
+
+.center[
+
+<img src="https://media.giphy.com/media/a5viI92PAF89q/giphy.gif" width="200" />
+
+]
+
+--
+
+.pull-left[
+
+- Existen múltiples herramientas (Stata, R, SAS, Python) y todas son válidas
+
+- Una posibilidad es el uso de un **paquete (librería)**
+
+- El paquete `calidad` implementa el estándar mediante `R`
+
+]
+
+
+.pull-right[
+
+- There are many tools (Stata, R, SAS, Python) and all of them are valid
+
+- One possibility is the use of a **package (library)**
+
+- The `calidad` package implements the criteria using `R`  
+
+]
+
+
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Introducción paquete calidad (introduction)
+
+
+
+.pull-left[
+
+### Objetivos del paquete
+
+- Facilitar la aplicación del estándar a usuarios externos
+
+- Aumentar la eficiencia de los analistas de datos
+
+- Reducir la probabilidad de errores en la implementación
+
+
+]
+
+
+.pull-right[
+
+### Objectives of the package
+
+
+- Make it easier for external users to apply the standard
+
+- Increase data analysts' efficiency
+
+- Reduce the probability of implementation errors
+
+]
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Introducción paquete calidad (introduction)
+
+
+.pull-left[
+El paquete `calidad` combina conceptos de calidad con el paquete `survey`, desarrollado por Thomas Lumley
+]
+
+.pull-right[
+`calidad` combines quality concepts with the `survey` package, developed by Thomas Lumley
+
+]
+
+--
+
+
+--
+
+
+.pull-left[
+**Desde hace un año el paquete está en github y hace algunas semanas lo subimos a CRAN**
+
+- media
+- proporciones
+- ~~mediana (con réplicas)~~
+- tamaños 
+- totales 
+
+
+]
+
+.pull-right[
+**The package has been available for a year. Two months ago, we uploaded it to CRAN**
+
+
+
+- mean
+- proportions
+- ~~median (replicates)~~
+- sizes 
+- totals 
+
+
+]
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Criterios de calidad CEPAL (ECLAC standard)
+
+
+.center[
+]
+
+
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Estándar de calidad CEPAL (ECLAC standard)
+
+.pull-left[
+* **El estándar CEPAL considera:**
+  + .small[coeficiente de variación]
+  + .red[.small[coeficiente de variación logarítmico]] 
+  + .small[tamaño de muestra]
+  + .red[.small[tamaño de muestra efectivo]] 
+  + .red[.small[conteo de casos no ponderado]]
+  + .small[grados de libertad] 
+
+]
+
+.pull-right[
+
+* **El estándar CEPAL considera:**
+  + .small[coefficient of variation]
+  + .red[.small[logarithmic coefficient of variation]] 
+  + .small[sample size]
+  + .red[.small[effective sample size]] 
+  + .red[.small[non-weighted units]]
+  + .small[degrees of freedom] 
+
+]
+
+--
+
+### New functionalities
+ 
+
+.center[
+<img src="https://media2.giphy.com/media/jVTkOsIRdx4was3Toi/giphy.gif?cid=ecf05e476ur52p5tltvqzzfoawj92bq9kf3soarb9ba7clm3&rid=giphy.gif&ct=g" width="250" />
+]
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Nuevos desarrollos con CEPAL 
+
+## New developments with ECLAC
+
+.pull-left[
+**Nuevos indicadores de calidad**
+
+**Flexibilización de umbrales**
+
+**Alinear nombres con la teoría**
+
+]
+
+.pull-right[
+
+**New quality indicators**
+
+**Flexible thresholds**
+
+**Names aligned with theory**
+
+]
+
+
+
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Estándares combinados (combined standards)
+
+.pull-left[
+
+La idea es generar una herramienta que:
+
+- Implemente los dos estándares
+
+- Ofrezca flexibilidad a los usuarios
+
+]
+
+.pull-right[
+
+The idea was to create a tool capable of:
+
+- Implementing both standards
+
+- Offering flexibility to users
+
+
+]
+
+
+.center[
+]
+
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Open source
+
+.pull-left[
+
+- Problemas similares en ONEs y organismos públicos
+- Herramientas open source pueden ayudar
+
+]
+
+.pull-right[
+
+- Similar problems in ONEs and goverment organizations
+- Open source tools can be very helpful
+
+]
+
+--
+
+
+.pull-left[
+
+- Empoderamiento de la comunidad ligada a las estadísticas oficiales
+
+* En Europa existe una comunidad desde hace algunos años 
+  + [uRos](https://r-project.ro/about_uRos.html) (ligada a R)
+  + [Awesome official statistics software](https://github.com/SNStatComp/awesome-official-statistics-software) (R, python, Java, C++)
+
+]
+
+.pull-right[
+- Empowerment of the community linked to official statistics
+
+* In Europe there has been a community for some years 
+  + [uRos](https://r-project.ro/about_uRos.html) (related to R)
+  + [Awesome official statistics software](https://github.com/SNStatComp/awesome-official-statistics-software) (R, python, Java, C++)
+]
+
+
+--
+
+.pull-left[
+- En América Latina la comunidad es aún incipiente
+- Desde hace poco existe un repositorio llamado ["Asombrosos paquetes de R en Latinoamérica"](https://github.com/pablotis/asombrosos-paquetes-r-latinoamerica)   
+
+]
+
+
+.pull-right[
+
+- In Latin America the community is still incipient
+- Recently there is a repository called ["Amazing R packages in Latin America"](https://github.com/pablotis/asombrosos-paquetes-r-latinoamerica)
+
+]
+
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Open source 
+
+.pull-left[
+
+Las dinámicas open source son ideales para la colaboración a distancia
+
+Las oficinas de estadística pueden trabajar unidas para resolver problemas comunes
+
+]
+
+.pull-right[
+
+Open source dynamics are ideal for remote collaboration
+
+Statistical offices can work together to solve common problems
+
+]
+
+
+
+---
+
+class: center, middle
+
+.linea-superior[]
+.linea-inferior[]
+
+
+<img src="imagenes/logo.png" width="180" />
+
+## Título
+
+## Subtítulo 
+
+## Unidad de Estudios Laborales, Subsecretaría del Trabajo
+
+### Mes de Año

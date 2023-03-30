@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>template</title>
+    <meta charset="utf-8" />
+    <meta name="date" content="2023-03-30" />
+    <script src="template_files/header-attrs-2.16/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan_custom/xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+class: center, middle
+
+.linea-superior[]
+.linea-inferior[]
+
+&lt;img src="imagenes/logo.png" width="180" /&gt;
+
+## Título
+
+## Subtítulo 
+
+## Unidad de Estudios Laborales, Subsecretaría del Trabajo
+
+### Mes de Año
+
+
+
+
+
+
+
+---
+
+class: inverse, center, middle
+
+.pull-left[
+# Estándar de calidad en encuestas de hogares ONE Chile
+]
+
+
+.pull-right[
+# Quality criteria for household surveys ONE Chile
+]
+
+
+---
+
+class: inverse, center, middle
+
+.pull-left[
+# Antes de empezar...
+]
+
+.pull-right[
+# Before starting...
+]
+
+
+
+---
+background-image: url("imagenes/fondo2.png")
+background-size: 12%
+background-position: 100% 0%
+
+# ¿Qué significa calidad estadística?
+
+## What is the meaning of statistical quality?
+
+.pull-left[
+
+Miguelito: According to the survey, the average salary of women in Arica is 600,000 pesos.
+
+Mafalda: Yes, but did you know that the interval is between 300,000 and 900,000?.
+
+
+]
+
+
+--
+
+.pull-right[
+
+The only thing I know is that I don't know anything
+
+]
+
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+
+# Estándar INE Chile (INE Chile standard)
+
+.pull-left[
+En 2020 el INE publica un estándar de calidad para las estimaciones con **encuestas de hogares**
+]
+
+.pull-right[
+In 2020 INE Chile published its statistical quality standard for **household surveys** estimations
+]
+
+--
+
+
+
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Estándar INE Chile (INE Chile standard)
+
+.pull-left[
+**Cuadro estadístico**: arreglo ordenado de datos procesados para facilitar la lectura e interpretación
+]
+
+.pull-right[
+**Statistical table**: ordered arrangement of data to facilitate reading and interpretation"
+]
+
+
+&lt;br&gt;
+
+.center[
+]
+
+
+---
+
+background-size: contain;
+background-position: 100% 0%
+
+#  Estándar INE Chile (INE Chile standard)
+
+.pull-left[
+- **Tamaño muestral (tm)**: unidades de análisis que nutren las estimaciones (viviendas, hogares y/o personas)
+
+* **Grados de libertad (gl)** 
+  + .small[Tratamiento diferenciado para las **proporciones y razones definidas entre 0 y 1**]
+
+
+* **Coeficiente de variación / error estándar**
+
+  + Proporción y razones definidas entre 0 y 1: **SE**
+  
+  + Resto: **CV**
+
+]
+
+.pull-right[
+- **Sample size**: units of analysis that contribute to estimations (dwellings, households or people)
+
+* **Degrees of freedom** 
+  + .small[Different procedure for **Proportions and ratios between 0 and 1**]
+
+
+* **Coefficient of variation / standard error**
+
+  + Proportions and ratios between 0 and 1: **SE**
+  
+  + All others: **CV**
+
+]
+
+
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Dicotomía de las proporciones 
+
+## Dicothomy of proportions
+
+
+
+
+It makes no sense to conclude that the quality of estimate of p is not acceptable but that estimate of 1-p is acceptable.
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Estándar INE Chile (INE Chile standard)
+
+.pull-left[
+**Indicadores de calidad**
+
+- Proporciones y razones definidas entre 0 y 1: **Error estándar**
+
+- Otras: Coeficiente de variación
+
+]
+
+.pull-right[
+
+**Quality criteria**
+
+- Proportions and ratios between 0 and 1: **Standard error**
+
+- All others: Coefficient of variation
+
+]
+
+
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Estándar INE Chile (INE Chile standard)
+
+.pull-left[
+### Primera etapa de aplicación de estándar
+
+Flujograma para evaluación de calidad de las estimaciones
+
+]
+
+.pull-right[
+### First step in quality assessment
+
+Flowchart for quality assessment
+]
+
+
+.center[
+]
+
+
+**Categories: Reliable, weakly reliable and non-reliable**
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Introducción paquete calidad (introduction)
+
+.pull-left[
+### ¿Cómo llevar a la práctica los conceptos de calidad?
+]
+
+.pull-right[
+
+### ¿How to put the quality concepts into practice?
+
+]
+
+.center[
+
+&lt;img src="https://media.giphy.com/media/a5viI92PAF89q/giphy.gif" width="200" /&gt;
+
+]
+
+--
+
+.pull-left[
+
+- Existen múltiples herramientas (Stata, R, SAS, Python) y todas son válidas
+
+- Una posibilidad es el uso de un **paquete (librería)**
+
+- El paquete `calidad` implementa el estándar mediante `R`
+
+]
+
+
+.pull-right[
+
+- There are many tools (Stata, R, SAS, Python) and all of them are valid
+
+- One possibility is the use of a **package (library)**
+
+- The `calidad` package implements the criteria using `R`  
+
+]
+
+
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Introducción paquete calidad (introduction)
+
+
+
+.pull-left[
+
+### Objetivos del paquete
+
+- Facilitar la aplicación del estándar a usuarios externos
+
+- Aumentar la eficiencia de los analistas de datos
+
+- Reducir la probabilidad de errores en la implementación
+
+
+]
+
+
+.pull-right[
+
+### Objectives of the package
+
+
+- Make it easier for external users to apply the standard
+
+- Increase data analysts' efficiency
+
+- Reduce the probability of implementation errors
+
+]
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Introducción paquete calidad (introduction)
+
+
+.pull-left[
+El paquete `calidad` combina conceptos de calidad con el paquete `survey`, desarrollado por Thomas Lumley
+]
+
+.pull-right[
+`calidad` combines quality concepts with the `survey` package, developed by Thomas Lumley
+
+]
+
+--
+
+
+--
+
+
+.pull-left[
+**Desde hace un año el paquete está en github y hace algunas semanas lo subimos a CRAN**
+
+- media
+- proporciones
+- ~~mediana (con réplicas)~~
+- tamaños 
+- totales 
+
+
+]
+
+.pull-right[
+**The package has been available for a year. Two months ago, we uploaded it to CRAN**
+
+
+
+- mean
+- proportions
+- ~~median (replicates)~~
+- sizes 
+- totals 
+
+
+]
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Criterios de calidad CEPAL (ECLAC standard)
+
+
+.center[
+]
+
+
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Estándar de calidad CEPAL (ECLAC standard)
+
+.pull-left[
+* **El estándar CEPAL considera:**
+  + .small[coeficiente de variación]
+  + .red[.small[coeficiente de variación logarítmico]] 
+  + .small[tamaño de muestra]
+  + .red[.small[tamaño de muestra efectivo]] 
+  + .red[.small[conteo de casos no ponderado]]
+  + .small[grados de libertad] 
+
+]
+
+.pull-right[
+
+* **El estándar CEPAL considera:**
+  + .small[coefficient of variation]
+  + .red[.small[logarithmic coefficient of variation]] 
+  + .small[sample size]
+  + .red[.small[effective sample size]] 
+  + .red[.small[non-weighted units]]
+  + .small[degrees of freedom] 
+
+]
+
+--
+
+### New functionalities
+ 
+
+.center[
+&lt;img src="https://media2.giphy.com/media/jVTkOsIRdx4was3Toi/giphy.gif?cid=ecf05e476ur52p5tltvqzzfoawj92bq9kf3soarb9ba7clm3&amp;rid=giphy.gif&amp;ct=g" width="250" /&gt;
+]
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Nuevos desarrollos con CEPAL 
+
+## New developments with ECLAC
+
+.pull-left[
+**Nuevos indicadores de calidad**
+
+**Flexibilización de umbrales**
+
+**Alinear nombres con la teoría**
+
+]
+
+.pull-right[
+
+**New quality indicators**
+
+**Flexible thresholds**
+
+**Names aligned with theory**
+
+]
+
+
+
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Estándares combinados (combined standards)
+
+.pull-left[
+
+La idea es generar una herramienta que:
+
+- Implemente los dos estándares
+
+- Ofrezca flexibilidad a los usuarios
+
+]
+
+.pull-right[
+
+The idea was to create a tool capable of:
+
+- Implementing both standards
+
+- Offering flexibility to users
+
+
+]
+
+
+.center[
+]
+
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Open source
+
+.pull-left[
+
+- Problemas similares en ONEs y organismos públicos
+- Herramientas open source pueden ayudar
+
+]
+
+.pull-right[
+
+- Similar problems in ONEs and goverment organizations
+- Open source tools can be very helpful
+
+]
+
+--
+
+
+.pull-left[
+
+- Empoderamiento de la comunidad ligada a las estadísticas oficiales
+
+* En Europa existe una comunidad desde hace algunos años 
+  + [uRos](https://r-project.ro/about_uRos.html) (ligada a R)
+  + [Awesome official statistics software](https://github.com/SNStatComp/awesome-official-statistics-software) (R, python, Java, C++)
+
+]
+
+.pull-right[
+- Empowerment of the community linked to official statistics
+
+* In Europe there has been a community for some years 
+  + [uRos](https://r-project.ro/about_uRos.html) (related to R)
+  + [Awesome official statistics software](https://github.com/SNStatComp/awesome-official-statistics-software) (R, python, Java, C++)
+]
+
+
+--
+
+.pull-left[
+- En América Latina la comunidad es aún incipiente
+- Desde hace poco existe un repositorio llamado ["Asombrosos paquetes de R en Latinoamérica"](https://github.com/pablotis/asombrosos-paquetes-r-latinoamerica)   
+
+]
+
+
+.pull-right[
+
+- In Latin America the community is still incipient
+- Recently there is a repository called ["Amazing R packages in Latin America"](https://github.com/pablotis/asombrosos-paquetes-r-latinoamerica)
+
+]
+
+
+---
+
+background-image: url("imagenes/fondo2.png")
+background-size: contain;
+background-position: 100% 0%
+
+# Open source 
+
+.pull-left[
+
+Las dinámicas open source son ideales para la colaboración a distancia
+
+Las oficinas de estadística pueden trabajar unidas para resolver problemas comunes
+
+]
+
+.pull-right[
+
+Open source dynamics are ideal for remote collaboration
+
+Statistical offices can work together to solve common problems
+
+]
+
+
+
+---
+
+class: center, middle
+
+.linea-superior[]
+.linea-inferior[]
+
+
+&lt;img src="imagenes/logo.png" width="180" /&gt;
+
+## Título
+
+## Subtítulo 
+
+## Unidad de Estudios Laborales, Subsecretaría del Trabajo
+
+### Mes de Año
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "13:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
